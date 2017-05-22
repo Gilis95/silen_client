@@ -132,6 +132,10 @@ int main(void)
 
             break;
         case KILL_PERSON:
+            /* Override memmory of kill person in order not to messup characters */
+            memset(kill_person_messages.pin,0,sizeof(kill_person_messages.pin));
+
+
             /* read data from console */
             write(STDOUT_FILENO,person_pin,sizeof(char)*strlen(person_pin));
             write(STDOUT_FILENO,"> ",sizeof(char));
@@ -144,9 +148,6 @@ int main(void)
                 perror("msgcrv failed with error");
                 exit(EXIT_FAILURE);
             }
-
-            /* Override memmory of insert_person in order not to messup on next query */
-            memset(kill_person_messages.pin,0,sizeof(kill_person_messages.pin));
 
             break;
         case STOP:

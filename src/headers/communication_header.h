@@ -11,7 +11,7 @@ typedef struct person_message {
 /* Message used for killing person with PIN */
 typedef struct kill_person_message{
     long int my_msg_type;
-    char pin[10];
+    char pin[11];
 }kill_person_msg;
 
 /* Message specifying next operation */
