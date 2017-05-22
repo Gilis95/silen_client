@@ -5,4 +5,8 @@ CONFIG -= qt
 
 
 SOURCES += \
-    main.c
+    src/main.c
+
+HEADERS += \
+    src/headers/communication_header.h \
+    src/headers/person.h
