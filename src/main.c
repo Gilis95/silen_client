@@ -173,6 +173,8 @@ char *get_input_string(FILE* fp, size_t size) {
 
     if (!str)return str;
 
+    fgetc(fp);
+
     while (EOF != (ch = fgetc(fp)) && ch != '\n') {
         str[len++] = ch;
 
